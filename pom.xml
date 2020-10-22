@@ -11,21 +11,13 @@
     <!-- https://mvnrepository.com/artifact/org.apache.camel.quarkus/camel-quarkus-platform-http -->
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
-            <groupId>org.apache.camel.quarkus</groupId>
-            <artifactId>camel-quarkus-platform-http</artifactId>
-            <version>1.1.0</version>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>selenium-webdriver</artifactId>
-            <version>2.53.3</version>
-        </dependency>
+
     </dependencies>
 
 </project>
