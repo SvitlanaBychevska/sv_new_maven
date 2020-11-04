@@ -2,6 +2,10 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 //@RunWith(JUnitPlatform.class)
 public class BookingTest {
@@ -57,6 +60,22 @@ public class BookingTest {
             WebElement tax = driver.findElement(By.xpath("//div[@class=\"realTotals\"]/p"));
             Assert.assertEquals("Your order includes $6.99 tax.",tax.getText());
         }
+    @Test
+    public void logginingToTheSite(){
+        driver.get("https://panama.ua/");
+        System.out.println("Go to site method");
+        WebElement inputLink = driver.findElement(By.cssSelector("div.header__button.enter"));
+        inputLink.click();
+        WebElement inputEmail = driver.findElement(By.name("user_login"));
+        WebElement inputPass = driver.findElement(By.name("user_pw"));
+        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"popup-auth-form\"]/div[3]/button"));
+
+        inputEmail.sendKeys("Svitlana");
+        inputPass.sendKeys("Password1");
+        submitButton.click();
+
+        System.out.println("Open Browser method");
+    }
 
         @After
         public void tearDown(){
