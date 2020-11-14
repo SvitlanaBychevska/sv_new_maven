@@ -2,12 +2,12 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.runner.RunWith;
 import testRunner.BookingTest;
-import testRunner.LoggingToTheSiteTest;
+import testRunner.MainPageLoadedTest;
 
 @RunWith(JUnitPlatform.class)
 @SelectClasses({
         BookingTest.class,
-        LoggingToTheSiteTest.class
+        MainPageLoadedTest.class
 })
 
 public class FeatureTestSuit {

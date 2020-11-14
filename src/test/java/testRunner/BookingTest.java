@@ -15,6 +15,7 @@ public class BookingTest {
     private WebDriver driver;
 
     @BeforeEach
+
     public void setUp(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Svitlana_Bychevska\\Documents\\Mckensson docs\\Automation\\sv_new_maven_untitled\\src\\main\\resources\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();

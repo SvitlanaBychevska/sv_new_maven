@@ -1,6 +1,4 @@
 package testRunner;
-
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -8,10 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
 import java.util.concurrent.TimeUnit;
 
-public class LoggingToTheSiteTest {
-    private WebDriver driver;
+import static constants.SitesUrls.url1;
+
+public class MainPageLoadedTest {
+    WebDriver driver;
 
     @BeforeEach
     public void setUp(){
@@ -23,8 +24,8 @@ public class LoggingToTheSiteTest {
     }
 
     @Test
-    public void logginingToTheSite(){
-        driver.get("https://panama.ua/");
+    public void testingOfMainPageIsLoaded(){
+        driver.get(url1);
         System.out.println("Go to site method");
         WebElement inputLink = driver.findElement(By.cssSelector("div.header__button.enter"));
         inputLink.click();
@@ -37,10 +38,10 @@ public class LoggingToTheSiteTest {
         System.out.println("Open Browser method");
     }
 
-    @AfterEach
-    public void tearDown(){
-        driver.close();
-        driver.quit();
-        System.out.println("Close Browser method");
-    }
+//    @AfterEach
+//    public void tearDown(){
+//        driver.close();
+//        driver.quit();
+//        System.out.println("Close Browser method");
+//    }
 }
