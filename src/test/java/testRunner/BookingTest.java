@@ -7,14 +7,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.concurrent.TimeUnit;
+
+import static constants.SitesUrls.url1;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.util.concurrent.TimeUnit;
 
 public class BookingTest {
     private WebDriver driver;
 
-    @BeforeEach
     public void setUp(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Svitlana_Bychevska\\Documents\\Mckensson docs\\Automation\\sv_new_maven_untitled\\src\\main\\resources\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
@@ -25,7 +27,7 @@ public class BookingTest {
 
     @Test
     public void booking(){
-        driver.get("https://ecsc00a03ccd.epam.com:9002/yacceleratorstorefront/?site=electronics");
+        driver.get(url1);
         System.out.println("Open Browser method");
         driver.manage().window().fullscreen();
         WebElement searchField = driver.findElement(By.xpath("//div/input[@type=\"text\"]"));
