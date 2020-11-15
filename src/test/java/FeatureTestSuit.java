@@ -1,13 +1,17 @@
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.runner.RunWith;
-import testRunner.BookingTest;
-import testRunner.MainPageLoadedTest;
+import testRunner.*;
 
 @RunWith(JUnitPlatform.class)
 @SelectClasses({
-        BookingTest.class,
-        MainPageLoadedTest.class
+        //BookingTest.class,
+        //MainPageLoadedTest.class
+        SearchProductsTest.class,
+        PreSubmitProductTest.class,
+        CheckPricesOnCartPageTest.class,
+        SubmisionProductTest.class,
+        CheckReturningCustomerPageTest.class
 })
 
 public class FeatureTestSuit {
