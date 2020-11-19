@@ -13,7 +13,7 @@ public class PanamaLoginPage {
             WebElement userName;
     @FindBy(name = "user_pw")
             WebElement password;
-    @FindBy(xpath = "//*[@id=\"popup-auth-form\"]/div[3]/button")
+    @FindBy(xpath = "//*[@id='popup-auth-form']/div[3]/button")
     WebElement loginButton;
 
 //    By enterButton = By.cssSelector("div.header__button.enter");

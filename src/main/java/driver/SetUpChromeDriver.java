@@ -14,7 +14,7 @@ public class SetUpChromeDriver {
     }
 
     public void setUpChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Svitlana_Bychevska\\Documents\\Mckensson docs\\Automation\\sv_new_maven_untitled\\src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--ignore-certificate-errors");
         driver = new ChromeDriver(options);
