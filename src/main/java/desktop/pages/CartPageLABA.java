@@ -24,7 +24,7 @@ public class CartPageLABA {
 
     }
 //CartPage is displayed
-    public Boolean testCartPageOpened(){
+    public Boolean testCartPageIsOpened(){
         return cartHeader.isDisplayed();
     }
 

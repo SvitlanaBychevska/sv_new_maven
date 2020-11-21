@@ -10,7 +10,7 @@ public class SetUpChromeDriver {
 
     public SetUpChromeDriver(WebDriver driver){
         this.driver = driver;
-        //PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver,this);
     }
 
     public void setUpChromeDriver() {
@@ -19,7 +19,6 @@ public class SetUpChromeDriver {
         options.addArguments("--ignore-certificate-errors");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-       // driver.get(urls);
     }
     public void setUpUrl(String urls){
         driver.get(urls);

@@ -18,7 +18,7 @@ public class AddToCartPageLABA {
         PageFactory.initElements(driver,this);
     }
 
-    public Boolean testAddToCartPageOpened(){
+    public Boolean testAddToCartPageIsOpened(){
        return addToCartHeader.isDisplayed();
     }
 

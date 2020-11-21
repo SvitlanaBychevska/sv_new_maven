@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 public class ReturningCustomerPageLABA {
 
     WebDriver driver;
-    @FindBy(xpath = "//div[@class=\"login-page__headline\"]")
+    @FindBy(xpath = "//div[@class='js-mobile-logo']")
+          //  (xpath = "//div[@class=\"login-page__headline\"]")
     WebElement returnCustomerPagetHeader;
     @FindBy(xpath = "//input[@id=\"guest.email\"]")
     WebElement guestEmail1;
