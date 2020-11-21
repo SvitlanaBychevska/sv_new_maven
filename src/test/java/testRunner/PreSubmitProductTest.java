@@ -42,12 +42,12 @@ public class PreSubmitProductTest {
         objSearchResult.clickOnSubmitButton();
         //Check that Add To Cart Page is shown
         objAddToCartPage = new AddToCartPageLABA(driver);
-        Assert.assertTrue(objAddToCartPage.testAddToCartPageOpened());
+        Assert.assertTrue(objAddToCartPage.testAddToCartPageIsOpened());
         //Click on checkout button
         objAddToCartPage.clickOnCheckOutButton();
         //Check that Cart Page is opened
         objCartPage = new CartPageLABA(driver);
-        Assert.assertTrue(objCartPage.testCartPageOpened());
+        Assert.assertTrue(objCartPage.testCartPageIsOpened());
     }
 
     @AfterEach
