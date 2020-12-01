@@ -1,24 +1,20 @@
 package desktop.pages;
-import org.openqa.selenium.WebDriver;
+import abstractClasses.page.AbstractPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
+import static driver.SetUpChromeDriver.getChromeDriver;
 
 
-public class AddToCartPageLABA {
+public class AddToCartPageLABA extends AbstractPage {
 
-    WebDriver driver;
-    @FindBy(xpath = "//div[@id=\"cboxTitle\"]")
-    WebElement addToCartHeader;
-    @FindBy(xpath = "//a[@class=\"btn btn-primary btn-block add-to-cart-button\"]")
-    WebElement checkOutButton;
+    //@FindBy(xpath = "//div[@id=\"cboxTitle\"]")
+    WebElement addToCartHeader = getChromeDriver().findElement(By.xpath("//div[@id=\"cboxTitle\"]"));
+    //@FindBy(xpath = "//a[@class=\"btn btn-primary btn-block add-to-cart-button\"]")
+    WebElement checkOutButton = getChromeDriver().findElement(By.xpath("//a[@class=\"btn btn-primary btn-block add-to-cart-button\"]"));
 
-    public AddToCartPageLABA(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-    }
 
-    public Boolean testAddToCartPageIsOpened(){
+    public Boolean testPageIsOpened(){
        return addToCartHeader.isDisplayed();
     }
 

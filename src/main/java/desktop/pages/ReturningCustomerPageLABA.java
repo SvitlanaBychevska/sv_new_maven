@@ -1,32 +1,29 @@
 package desktop.pages;
-import org.openqa.selenium.WebDriver;
+import abstractClasses.page.AbstractPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import static driver.SetUpChromeDriver.getChromeDriver;
 
-public class ReturningCustomerPageLABA {
+public class ReturningCustomerPageLABA extends AbstractPage {
 
-    WebDriver driver;
-    @FindBy(xpath = "//div[@class='js-mobile-logo']")
-          //  (xpath = "//div[@class=\"login-page__headline\"]")
-    WebElement returnCustomerPagetHeader;
-    @FindBy(xpath = "//input[@id=\"guest.email\"]")
-    WebElement guestEmail1;
-    @FindBy(xpath = "//input[@class=\"confirmGuestEmail form-control\"]")
-    WebElement guestEmail2;
-    @FindBy(xpath = "//div/button[@type=\"submit\"]")
-    WebElement logInAndCheckOutButton;
+    //FindBy(xpath = "//div[@class='js-mobile-logo']")
+    WebElement returnCustomerPageHeader = getChromeDriver().findElement(By.xpath("//div[@class='login-page__headline']"));
+    //@FindBy(xpath = "//input[@id=\"guest.email\"]")
+    WebElement guestEmail1 = getChromeDriver().findElement(By.xpath("//input[@id=\"guest.email\"]"));
+    //@FindBy(xpath = "//input[@class=\"confirmGuestEmail form-control\"]")
+    WebElement guestEmail2 = getChromeDriver().findElement(By.xpath("//input[@class=\"confirmGuestEmail form-control\"]"));
+    //@FindBy(xpath = "//div/button[@type=\"submit\"]")
+    WebElement logInAndCheckOutButton = getChromeDriver().findElement(By.xpath("//div/button[@type=\"submit\"]"));
 
 
-    public ReturningCustomerPageLABA(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-
-    }
     //Returning Customer Page is displayed
-    public Boolean testReturningCustomerPageIsOpened(){
-        return returnCustomerPagetHeader.isDisplayed();
+    public Boolean testPageIsOpened(){
+        return returnCustomerPageHeader.isDisplayed();
     }
+
+//    public Boolean testReturningCustomerPageIsOpened(){
+//        return returnCustomerPageHeader.isDisplayed();
+//    }
 
     //Input the first email
     public void setEmail1Value(String email1){

@@ -1,22 +1,27 @@
 package desktop.pages;
-import org.openqa.selenium.WebDriver;
+import abstractClasses.page.AbstractPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class PanamaMainPage {
+import static driver.SetUpChromeDriver.getChromeDriver;
 
-    WebDriver driver;
-    @FindBy(xpath="//div[@class=\"header__logo wide\"]")
-    WebElement homePageHeaderLogoName;
+public class PanamaMainPage extends AbstractPage {
 
-    public PanamaMainPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-    }
+  //  WebDriver driver;
+ //   @FindBy(xpath="//div[@class=\"header__logo wide\"]")
+    WebElement homePageHeaderLogoName = getChromeDriver().findElement(By.xpath("//div[@class=\"header__logo wide\"]"));
+
+//    public PanamaMainPage(WebDriver driver){
+//        this.driver = driver;
+//        PageFactory.initElements(driver,this);
+//    }
 
     //Get the Header Logo from Home Page
-    public Boolean getHomePageHeaderLogo(){
+    public Boolean testPageIsOpened(){
         return	homePageHeaderLogoName.isDisplayed();
     }
+
+//  public Boolean getHomePageHeaderLogo(){
+//    return	homePageHeaderLogoName.isDisplayed();
+//  }
 }
