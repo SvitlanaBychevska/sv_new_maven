@@ -1,28 +1,24 @@
 package desktop.pages;
-import org.openqa.selenium.WebDriver;
+import abstractClasses.page.AbstractPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import static driver.SetUpChromeDriver.getChromeDriver;
 
-public class SearchResultPageLABA {
+public class SearchResultPageLABA extends AbstractPage {
+    //@FindBy(xpath = "//div[@class=\"results\"]")
+    WebElement searchResultPage = getChromeDriver().findElement(By.xpath("//div[@class=\"results\"]"));
+    //@FindBy(xpath = "//div/form[@id=\"addToCartForm1776948\"]/button[@type=\"submit\"]")
+    WebElement submitButton = getChromeDriver().findElement(By.xpath("//div/form[@id=\"addToCartForm1776948\"]/button[@type=\"submit\"]"));
 
-    WebDriver driver;
-
-    @FindBy(xpath = "//div[@class=\"results\"]")
-    WebElement searchResultPage;
-    @FindBy(xpath = "//div/form[@id=\"addToCartForm1776948\"]/button[@type=\"submit\"]")
-    WebElement submitButton;
-
-
-    public SearchResultPageLABA(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-    }
 
     //Get the Page name from Home Page
-    public Boolean getSearchResultText(){
+    public Boolean testPageIsOpened(){
         return	searchResultPage.isDisplayed();
     }
+
+//    public Boolean getSearchResultText(){
+//        return	searchResultPage.isDisplayed();
+//    }
 
     //Click on Submit Button
     public void clickOnSubmitButton(){

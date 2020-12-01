@@ -5,12 +5,12 @@ import testRunner.*;
 
 @RunWith(JUnitPlatform.class)
 @SelectClasses({
-        //BookingTest.class,
-        //MainPageLoadedTest.class
+        BookingTest.class,
+        MainPageLoadedTest.class,
         SearchProductsTest.class,
         PreSubmitProductTest.class,
         CheckPricesOnCartPageTest.class,
-        SubmisionProductTest.class,
+        SubmissionProductTest.class,
         CheckReturningCustomerPageTest.class
 })
 

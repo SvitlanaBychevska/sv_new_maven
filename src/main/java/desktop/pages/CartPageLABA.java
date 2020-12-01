@@ -1,28 +1,21 @@
 package desktop.pages;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static driver.SetUpChromeDriver.getChromeDriver;
 
 public class CartPageLABA {
 
-    WebDriver driver;
-    @FindBy(xpath = "//h1[@class=\"cart-headline\"]")
-    WebElement cartHeader;
-    @FindBy(xpath = "//div[@class=\"col-xs-6 cart-totals-right text-right\"]")
-    WebElement subTotalPrice;
-    @FindBy(xpath = "//div[@class=\"col-xs-6 cart-totals-right text-right grand-total\"]")
-    WebElement totalPrice;
-    @FindBy(xpath = "//div[@class=\"cart__actions\"]//button[@class=\"btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button\"]")
-    WebElement submitButton2;
+    //@FindBy(xpath = "//h1[@class=\"cart-headline\"]")
+    WebElement cartHeader = getChromeDriver().findElement(By.xpath("//h1[@class=\"cart-headline\"]"));
+    //@FindBy(xpath = "//div[@class=\"col-xs-6 cart-totals-right text-right\"]")
+    WebElement subTotalPrice = getChromeDriver().findElement(By.xpath("//div[@class=\"col-xs-6 cart-totals-right text-right\"]"));
+    //@FindBy(xpath = "//div[@class=\"col-xs-6 cart-totals-right text-right grand-total\"]")
+    WebElement totalPrice = getChromeDriver().findElement(By.xpath("//div[@class=\"col-xs-6 cart-totals-right text-right grand-total\"]"));
+    //@FindBy(xpath = "//div[@class=\"cart__actions\"]//button[@class=\"btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button\"]")
+    WebElement submitButton2 = getChromeDriver().findElement(By.xpath("//div[contains(@class, 'border')]//button[contains(@class, 'js-continue-checkout-button')]"));
 
 
-    public CartPageLABA(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-
-    }
 //CartPage is displayed
     public Boolean testCartPageIsOpened(){
         return cartHeader.isDisplayed();
