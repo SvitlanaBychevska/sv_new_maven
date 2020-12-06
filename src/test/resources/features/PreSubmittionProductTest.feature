@@ -10,7 +10,7 @@ Feature: do pre-submission Product on the site
   click on the Checkout button on the Result page and click on Checkout button on the Add To Card Page
    Given I go to the site 'https://ecsc00a03ccd.epam.com:9002/yacceleratorstorefront/?site=electronics'
    When I search for 'camileo'
-   And I click on the search button
+   And I click on the magnifier button
    And I click on the CheckOut button on Result page
-   And I click on the CheckOut button on the Add to Cart Page
+   And I click on the Submit button on the Add to Cart Page
    Then I go to Cart Page

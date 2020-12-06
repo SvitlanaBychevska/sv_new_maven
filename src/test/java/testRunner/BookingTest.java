@@ -6,6 +6,7 @@ import static constants.SitesUrls.url1;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static driver.SetUpChromeDriver.getChromeDriver;
+
 public class BookingTest {
 
     @Test
