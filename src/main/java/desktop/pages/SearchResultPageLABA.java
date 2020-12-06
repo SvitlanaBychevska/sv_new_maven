@@ -16,10 +16,6 @@ public class SearchResultPageLABA extends AbstractPage {
         return	searchResultPage.isDisplayed();
     }
 
-//    public Boolean getSearchResultText(){
-//        return	searchResultPage.isDisplayed();
-//    }
-
     //Click on Submit Button
     public void clickOnSubmitButton(){
         submitButton.click();

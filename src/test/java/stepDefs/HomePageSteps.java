@@ -9,33 +9,28 @@ import org.junit.Assert;
 
 
 public class HomePageSteps {
-    SearchFragmentLABA objSearchFragment;
-    SearchResultPageLABA objSearchResult;
-    AddToCartPageLABA objAddToCartPage;
+    SearchFragmentLABA objSearchFragment = new SearchFragmentLABA();
+    SearchResultPageLABA objSearchResult = new SearchResultPageLABA();
+    AddToCartPageLABA objAddToCartPage = new AddToCartPageLABA();
 
     @When("I search for {string}")
     public void searchProduct(String product){
-        objSearchFragment = new SearchFragmentLABA();
         objSearchFragment.fillInSearchField(product);
     }
 
-    @And("I click on the search button")
+    @And("^I click on the search|magnifier button$")
     public void clickOnSearchButton(){
-        objSearchFragment = new SearchFragmentLABA();
         objSearchFragment.clickOnSearchButton();
     }
 
-    @And("I click on the CheckOut button on Result page")
+    @And("^I click on the CheckOut|Submit button on Result page$")
     public void clickOnCheckOutButtonOnResultPage(){
-        objSearchResult = new SearchResultPageLABA();
         objSearchResult.clickOnSubmitButton();
-        objAddToCartPage = new AddToCartPageLABA();
         Assert.assertTrue(objAddToCartPage.testPageIsOpened());
     }
 
     @Then("I got search result page")
     public void searchResultIsShown(){
-        objSearchResult = new SearchResultPageLABA();
         Assert.assertTrue(objSearchResult.testPageIsOpened());
     }
 

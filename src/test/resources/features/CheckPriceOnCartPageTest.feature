@@ -1,19 +1,19 @@
 @Regression
-Feature: do submission Product on the site
+Feature: check Prices on the Cart Page
   As a customer
   I want to be able to search products via Search panel and click on "CheckOut" button
   and then click on "CheckOut" button on the AddToCart page
-  and then click on "CheckOut" button on the Cart page
-  So that, I can see Returning Customer page page
+  So that, I can see Cart page and reckeck Price there
 
   @Scenario1
   Scenario: go to the site, input Product name, click on the Search button,
-  click on the CheckOut button on the Result page, click on CheckOut button on the Add To Card Page,
-  click on CheckOut button on the Card Page
+  click on the Checkout button on the Result page, click on Checkout button on the Add To Card Page
+  and check Price on the Cart Page
     Given I go to the site 'https://ecsc00a03ccd.epam.com:9002/yacceleratorstorefront/?site=electronics'
     When I search for 'camileo'
     And I click on the search button
-    And I click on the Submit button on Result page
+    And I click on the CheckOut button on Result page
     And I click on the CheckOut button on the Add to Cart Page
-    And I click on the CheckOut button on the Cart
-    Then I go to Returning Customer Page
+    Then I have the following final Prices and they are correct
+    |subtotal |total   |tax                            |
+    |$146.88  |$146.88 |Your order includes $6.99 tax. |
