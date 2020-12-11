@@ -13,20 +13,21 @@ public class HomePageSteps {
     SearchResultPageLABA objSearchResult = new SearchResultPageLABA();
     AddToCartPageLABA objAddToCartPage = new AddToCartPageLABA();
 
-    @When("I search for {string}")
-    public void searchProduct(String product){
+    @When("I fill in search field with {string}")
+    public void searchProduct(String product)
+    {
         objSearchFragment.fillInSearchField(product);
     }
 
-    @And("^I click on the search|magnifier button$")
+    @And("I click on the search button")
     public void clickOnSearchButton(){
         objSearchFragment.clickOnSearchButton();
     }
 
-    @And("^I click on the CheckOut|Submit button on Result page$")
+    @And("I click on the CheckOut button on Result page")
     public void clickOnCheckOutButtonOnResultPage(){
         objSearchResult.clickOnSubmitButton();
-        Assert.assertTrue(objAddToCartPage.testPageIsOpened());
+       // Assert.assertTrue(objAddToCartPage.testPageIsOpened());
     }
 
     @Then("I got search result page")

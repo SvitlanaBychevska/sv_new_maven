@@ -5,11 +5,10 @@ import org.junit.Assert;
 
 
 public class ReturningCustomerPageSteps {
-    ReturningCustomerPageLABA objReturningCustomerPage;
+    ReturningCustomerPageLABA objReturningCustomerPage = new ReturningCustomerPageLABA();
 
     @Then("I go to Returning Customer Page")
     public void checkThatReturningCustomerPageIsOpened(){
-        objReturningCustomerPage = new ReturningCustomerPageLABA();
         Assert.assertTrue(objReturningCustomerPage.testPageIsOpened());
     }
 }
