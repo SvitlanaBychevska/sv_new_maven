@@ -3,8 +3,12 @@ package abstractClasses.page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public abstract class AbstractPage {
+import static driver.SetUpChromeDriver.getChromeDriver;
 
-    public abstract Boolean testPageIsOpened();
+public class AbstractPage {
+
+    public boolean testPageIsOpened(By byLocator) {
+            return getChromeDriver().findElement(byLocator).isDisplayed();
+    }
 
 }

@@ -1,23 +1,21 @@
 package desktop.fragments;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import static driver.SetUpChromeDriver.getChromeDriver;
+
 
 public class SearchFragmentLABA {
 
-    //@FindBy(xpath = "//div/input[@type=\"text\"]")
-    WebElement searchField = getChromeDriver().findElement(By.xpath("//div/input[@type=\"text\"]"));
-    //@FindBy(xpath = "//button[@class=\"btn btn-link js_search_button\"]")
-    WebElement searchButton = getChromeDriver().findElement(By.xpath("//button[@class=\"btn btn-link js_search_button\"]"));
-
+   // WebElement searchField = getChromeDriver().findElement(By.xpath("//div/input[@type=\"text\"]"));
+    private static final By SEARCH_FIELD = By.xpath("//div/input[@type=\"text\"]");
+    //WebElement searchButton = getChromeDriver().findElement(By.xpath("//button[@class=\"btn btn-link js_search_button\"]"));
+    private static final By SEARCH_BUTTON = By.xpath("//button[@class=\"btn btn-link js_search_button\"]");
 
     public void fillInSearchField(String textForSearch){
-        searchField.sendKeys(textForSearch);
+        getChromeDriver().findElement(SEARCH_FIELD).sendKeys(textForSearch);
     }
 
     public void clickOnSearchButton(){
-        searchButton.click();
+        getChromeDriver().findElement(SEARCH_BUTTON).click();
     }
 
 

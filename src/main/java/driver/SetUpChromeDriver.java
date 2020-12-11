@@ -20,6 +20,7 @@ public class SetUpChromeDriver {
         }
         return instance;
     }
+
     public static WebDriver FirefoxDriver() {
         if (instance == null) {
             instance = driverFactory("fireFox");

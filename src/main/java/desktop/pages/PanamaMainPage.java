@@ -7,21 +7,12 @@ import static driver.SetUpChromeDriver.getChromeDriver;
 
 public class PanamaMainPage extends AbstractPage {
 
-  //  WebDriver driver;
- //   @FindBy(xpath="//div[@class=\"header__logo wide\"]")
-    WebElement homePageHeaderLogoName = getChromeDriver().findElement(By.xpath("//div[@class=\"header__logo wide\"]"));
-
-//    public PanamaMainPage(WebDriver driver){
-//        this.driver = driver;
-//        PageFactory.initElements(driver,this);
-//    }
+    //WebElement homePageHeaderLogoName = getChromeDriver().findElement(By.xpath("//div[@class=\"header__logo wide\"]"));
+  private static final By HOME_PAGE_HEADER_LOGO_NAME = By.xpath("//div[@class=\"header__logo wide\"]");
 
     //Get the Header Logo from Home Page
-    public Boolean testPageIsOpened(){
-        return	homePageHeaderLogoName.isDisplayed();
+    public boolean testPageIsOpened(){
+        return	getChromeDriver().findElement(HOME_PAGE_HEADER_LOGO_NAME).isDisplayed();
     }
 
-//  public Boolean getHomePageHeaderLogo(){
-//    return	homePageHeaderLogoName.isDisplayed();
-//  }
 }
